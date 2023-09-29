@@ -1,8 +1,6 @@
 #ifndef __CONNECT_H__
 #define __CONNECT_H__
 
-#include <stdint.h>
-
 typedef char *String;
 
 typedef struct _input
@@ -14,7 +12,7 @@ typedef struct _input
 
 typedef struct _output
 {
-    uint16_t port;
+    String topic;
     String accessToken;
 } Output;
 
