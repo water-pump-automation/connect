@@ -1,6 +1,6 @@
 #include "connect.h"
 
-void Connect(int retries, Input *input, Output *output)
+Bool Connect(int retries, Input *input, Output *output)
 {
     //
 }

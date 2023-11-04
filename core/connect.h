@@ -2,6 +2,7 @@
 #define __CONNECT_H__
 
 typedef char *String;
+typedef int Bool;
 
 typedef struct _input
 {
@@ -16,6 +17,6 @@ typedef struct _output
     String accessToken;
 } Output;
 
-void Connect(int retries, Input *input, Output *output);
+Bool Connect(int retries, Input *input, Output *output);
 
 #endif
