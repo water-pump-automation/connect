@@ -2,7 +2,5 @@
 
 Bool Connect(int retries, Input *input, Output *output)
 {
-    //
+    return true;
 }
-
-int main() {}

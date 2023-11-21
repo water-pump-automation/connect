@@ -2,7 +2,11 @@
 #define __CONNECT_H__
 
 typedef char *String;
-typedef int Bool;
+typedef enum _bool
+{
+    false = 0,
+    true
+} Bool;
 
 typedef struct _input
 {
