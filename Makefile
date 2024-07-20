@@ -13,7 +13,7 @@ OBJS = $(patsubst %.c,%.o,$(SRCS))
 
 # Default rule
 all: $(OBJS)
-	ld -r $< -o $(OBJ_DIR)/network_plug.o
+	ld -r $< -o $(OBJ_DIR)/connect.o
 
 $(SRC_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
