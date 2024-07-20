@@ -3,11 +3,11 @@ CC = gcc
 # Source directory
 SRC_DIR = ./src
 # Compiler flags
-CFLAGS = -I $(SRC_DIR)/core
+CFLAGS = -I ./headers
 # Object directory
 OBJ_DIR = ./obj
 # Source files
-SRCS = $(SRC_DIR)/infra/esp32/connect.c
+SRCS = $(SRC_DIR)/esp32/connect.c
 # Object files
 OBJS = $(patsubst %.c,%.o,$(SRCS))
 
