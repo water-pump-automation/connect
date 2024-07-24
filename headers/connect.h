@@ -2,6 +2,7 @@
 #define __CONNECT_H__
 
 typedef char *String;
+
 typedef enum _bool
 {
     not_connected = 0,
@@ -10,17 +11,11 @@ typedef enum _bool
 
 typedef struct _input
 {
-    String connectionAddress;
-    String contextName;
-    String groupName;
+    String ssid;
+    String password;
 } Input;
 
-typedef struct _output
-{
-    String topic;
-    String accessToken;
-} Output;
 
-Conn Connect(int retries, Input *input, Output *output);
+Conn Connect(int retries, Input *input);
 
 #endif
