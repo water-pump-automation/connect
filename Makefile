@@ -1,13 +1,24 @@
-CC=gcc
+# Compiler
+CC = gcc
+# Source directory
+SRC_DIR = ./src
+# Load directory
+LOAD_DIR = ./load
+# Compiler flags
+CFLAGS = -I ./headers
+# Object directory
+OBJ_DIR = ./obj
 
-CORE_FOLDER=./core
-INFRA_FOLDER=./infra
-ESP32_FOLDER=$(INFRA_FOLDER)/esp32
+esp32: $(patsubst %.c,%.o,$(SRC_DIR)/esp32/connect.c) $(patsubst %.c,%.o,$(LOAD_DIR)/load.c)
+	ld -r $^ $(CFLAGS) -o $(OBJ_DIR)/connect.o
 
-CFLAGS=-I $(CORE_FOLDER) -I $(ESP32_FOLDER)
+$(SRC_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-network_plug: $(ESP32_FOLDER)/connect.c
-	@$(CC) -o network_plug $(CFLAGS) $(ESP32_FOLDER)/connect.c
+$(LOAD_DIR)/%.o: $(LOAD_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm network_plug_lib network_plug
+	@rm $(OBJ_DIR)/*.o
+	@rm $(SRC_DIR)/esp32/*.o
+	@rm $(LOAD_DIR)/*.o
