@@ -1,2 +1,2 @@
-# network-plug
+# connect
 First stage network connection
